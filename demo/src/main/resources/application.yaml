@@ -6,9 +6,9 @@ spring:
       max-request-size: 11MB 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5433/postgres
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://dpg-cn9rqqn79t8c73c5755g-a.frankfurt-postgres.render.com:5432/dbtest_loux
+    username: dbtest_loux_user
+    password: QqBzzNJswEbsrc84MyN4rOPp3cEWBJAu
   jpa:
     generate-ddl: true
     hibernate:
