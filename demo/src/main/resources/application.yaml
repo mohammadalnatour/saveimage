@@ -1,0 +1,26 @@
+
+spring:
+  http:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 11MB 
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/postgres
+    username: postgres
+    password: postgres
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  logging:
+    level:
+      org.springframework: info
+      org.hibernate: info
+
+server:
+  port: 8080
