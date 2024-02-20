@@ -21,8 +21,7 @@ spring:
     level:
       org.springframework: info
       org.hibernate: info
-      org.hibernate: info
       com.example.demo: info
 
 server:
-  port: 8080
+  port: 8087
