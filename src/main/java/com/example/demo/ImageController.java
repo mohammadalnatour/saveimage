@@ -9,9 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,8 +24,7 @@ public class ImageController {
 	@Autowired
 	private ImageService imageService;
 
-	@CrossOrigin
-	@RequestMapping(value = "/file", method = RequestMethod.POST)
+	@PostMapping("/file")
 	public ResponseEntity<?> uploadImage(@RequestParam("file") MultipartFile file) throws IOException {
 		if (!file.isEmpty()) {
 			System.out.println(file);
@@ -35,7 +34,6 @@ public class ImageController {
 		return null;
 	}
 
-	@CrossOrigin
 	@GetMapping("/{fileName}")
 	public ResponseEntity<?> downloadImage(@PathVariable String fileName) {
 		byte[] imageData = imageService.downloadImage(fileName);
